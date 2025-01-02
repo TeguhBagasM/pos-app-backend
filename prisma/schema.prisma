@@ -12,13 +12,13 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
-
+// category
 model Category {
   id           Int       @id @default(autoincrement())
   kategoryName String
   Product      Product[]
 }
-
+// product
 model Product {
   id                Int                 @id @default(autoincrement())
   code              String              @unique
