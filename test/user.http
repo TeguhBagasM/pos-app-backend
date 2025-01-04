@@ -1,20 +1,20 @@
 ### create user
-POST {{BASE_URL}}/users
+POST http://localhost:3000/users
 Content-Type: application/json
 {
-  "name":"Pojok Code 2",
-  "userName":"code2",
-  "password":"1234",
-  "confirmPassword":"1234",
-  "role":"admin"
+  "name":"Teguh Bagas M",
+  "userName":"teguh",
+  "password":"teguh",
+  "confirmPassword":"teguh",
+  "role":"kasir"
 }
 
 ### user login
-POST {{BASE_URL}}/users/login
+POST http://localhost:3000/users/login
 Content-Type: application/json
 {
-  "userName":"code",
-  "password":"1234"
+  "userName":"teguh",
+  "password":"teguh"
 }
 
 {{
@@ -23,32 +23,32 @@ Content-Type: application/json
 }}
 
 ### update user
-PUT {{BASE_URL}}/users/2
+PUT http://localhost:3000/users/2
 Content-Type: application/json
 Authorization: Bearer {{$global.accessToken}}
 {
-  "name":"Pojok Code",
-  "userName":"code",
-  "password":"1234",
-  "confirmPassword":"1234",
-  "role":"admin"
+  "name":"Teguh Bagmar",
+  "userName":"bagmar",
+  "password":"bagmar",
+  "confirmPassword":"bagmar",
+  "role":"kasir"
 }
 
 ### delete user
-DELETE {{BASE_URL}}/users/3
+DELETE http://localhost:3000/users/3
 Content-Type: application/json
 Authorization: Bearer {{$global.accessToken}}
 
 ### get all user
-GET {{BASE_URL}}/users
+GET http://localhost:3000/users
 Authorization: Bearer {{$global.accessToken}}
 
 ### get user by id
-GET {{BASE_URL}}/users/2
+GET http://localhost:3000/users/2
 Authorization: Bearer {{$global.accessToken}}
 
 ### refresh token
-GET {{BASE_URL}}/users/refresh
+GET http://localhost:3000/users/refresh
 Authorization: Bearer {{$global.refreshToken}}
 
 {{

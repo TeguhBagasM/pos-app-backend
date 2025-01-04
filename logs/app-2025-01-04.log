@@ -1,0 +1,7 @@
+ [LOGGER] 2025-01-04 09:23:17.585 PM error : uncaughtException: createUser is not defined
+ReferenceError: createUser is not defined
+    at file:///C:/Users/user/Documents/stmik/project/pos-app/backend/src/routes/user.route.js:6:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:34:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)

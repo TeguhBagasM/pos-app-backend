@@ -1,4 +1,6 @@
 import { Router } from "express";
+
+import { autenticate } from "../controllers/errorController.js";
 import {
   createUser,
   deleteUser,
@@ -8,7 +10,6 @@ import {
   setRefreshToken,
   updateUser,
 } from "../controllers/userController.js";
-import { autenticate } from "../controllers/errorController.js";
 const userRouter = Router();
 
 userRouter.post("/users", createUser);
