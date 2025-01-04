@@ -1,5 +1,5 @@
 import { compare } from "bcrypt";
-import { encrypt } from "../utils/bcript.js";
+import { encrypt } from "../utils/bcrypt.js";
 import prisma from "../utils/client.js";
 import { logger } from "../utils/winston.js";
 import { userUpdateValidation, userValidation } from "../validations/user.validation.js";
@@ -29,7 +29,7 @@ export const createUser = async (req, res) => {
     });
     result.password = "xxxxxxxxxxxxxxxxxx";
     return res.status(200).json({
-      message: "success",
+      message: "User created successfully",
       result,
     });
   } catch (error) {
@@ -51,7 +51,6 @@ export const updateUser = async (req, res) => {
       result: null,
     });
   }
-  // data validation
   const { error, value } = userUpdateValidation(req.body);
   if (error) {
     return res.status(400).json({
@@ -77,7 +76,7 @@ export const updateUser = async (req, res) => {
     });
     result.password = "xxxxxxxxxxxxxxxxxx";
     return res.status(200).json({
-      message: "success",
+      message: "User updated successfully",
       result,
     });
   } catch (error) {
@@ -138,7 +137,7 @@ export const deleteUser = async (req, res) => {
     });
     result.password = "xxxxxxxxxxxxxxxxxx";
     return res.status(200).json({
-      message: "success",
+      message: "User deleted succesfully",
       result,
     });
   } catch (error) {
