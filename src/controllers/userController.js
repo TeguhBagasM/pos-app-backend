@@ -95,34 +95,36 @@ export const loginUser = async (req, res) => {
         userName: req.body.userName,
       },
     });
-    if (result) {
-      if (compare(req.body.password, result.password)) {
-        // generate token
-        result.password = "xxxxxxxxxxxxxxxxxx";
-        const acessToken = generateAccessToken(result);
-        const refreshToken = generateRefreshToken(result);
-        return res.status(200).json({
-          message: "Login success",
-          result,
-          acessToken,
-          refreshToken,
-        });
-      } else {
-        return res.status(500).json({
-          message: "password not match",
-          result: null,
-        });
-      }
-    } else {
-      return res.status(500).json({
+
+    if (!result) {
+      return res.status(401).json({
         message: "User not found",
         result: null,
       });
     }
+
+    const isPasswordValid = await compare(req.body.password, result.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({
+        message: "Password not match",
+        result: null,
+      });
+    }
+
+    result.password = "xxxxxxxxxxxxxxxxxx";
+    const accessToken = generateAccessToken(result);
+    const refreshToken = generateRefreshToken(result);
+
+    return res.status(200).json({
+      message: "Login success",
+      result,
+      accessToken,
+      refreshToken,
+    });
   } catch (error) {
     logger.error("controllers/user.controller.js:loginUser - " + error.message);
     return res.status(500).json({
-      message: error.message,
+      message: "Internal server error",
       result: null,
     });
   }
