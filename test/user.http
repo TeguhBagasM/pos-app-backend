@@ -6,7 +6,7 @@ Content-Type: application/json
   "userName":"teguh",
   "password":"teguh",
   "confirmPassword":"teguh",
-  "role":"kasir"
+  "role":"manager"
 }
 
 ### user login
@@ -15,6 +15,13 @@ Content-Type: application/json
 {
   "userName":"teguh",
   "password":"teguh"
+}
+### user login
+POST http://localhost:3000/api/users/logout
+Content-Type: application/json
+Authorization: Bearer {{$global.accessToken}}
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlck5hbWUiOiJ0ZWd1aCIsInBhc3N3b3JkIjoieHh4eHh4eHh4eHh4eHh4eHh4IiwibmFtZSI6IlRlZ3VoIEJhZ2FzIE0iLCJyb2xlIjoia2FzaXIiLCJpYXQiOjE3MzYwODg1MzYsImV4cCI6MTczNjE3NDkzNn0.fmVQRCMmF8N2p59qzLtbxlHQRjOjC7O92N0SycQwv3w"
 }
 
 {{

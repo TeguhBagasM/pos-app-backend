@@ -1,0 +1,27 @@
+### get all category
+GET http://localhost:3000/api/categories
+Authorization: Bearer {{$global.accessToken}}
+
+### get category by id
+GET http://localhost:3000/api/categories/2
+Authorization: Bearer {{$global.accessToken}}
+
+### create category
+POST http://localhost:3000/api/categories
+Content-Type: application/json
+Authorization: Bearer {{$global.accessToken}}
+{
+  "kategoryName": "makanan"
+}
+
+### update category
+PUT http://localhost:3000/api/categories/2
+Content-Type: application/json
+Authorization: Bearer {{$global.accessToken}}
+{
+  "kategoryName": "minuman"
+}
+
+### delete categoery
+DELETE http://localhost:3000/api/categories/2
+Authorization: Bearer {{$global.accessToken}}
