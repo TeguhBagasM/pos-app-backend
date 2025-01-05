@@ -33,7 +33,7 @@ export const createUser = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/user.controller.js:createUser - " + error.message);
+    logger.error("controllers/userController.js:createUser - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -80,7 +80,7 @@ export const updateUser = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/user.controller.js:updateUser - " + error.message);
+    logger.error("controllers/userController.js:updateUser - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -122,7 +122,7 @@ export const loginUser = async (req, res) => {
       refreshToken,
     });
   } catch (error) {
-    logger.error("controllers/user.controller.js:loginUser - " + error.message);
+    logger.error("controllers/userController.js:loginUser - " + error.message);
     return res.status(500).json({
       message: "Internal server error",
       result: null,
@@ -143,7 +143,7 @@ export const deleteUser = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/user.controller.js:deleteUser - " + error.message);
+    logger.error("controllers/userController.js:deleteUser - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -159,7 +159,7 @@ export const getAllUser = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/user.controller.js:getAllUser - " + error.message);
+    logger.error("controllers/userController.js:getAllUser - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -180,7 +180,7 @@ export const getUserById = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/user.controller.js:getUserById - " + error.message);
+    logger.error("controllers/userController.js:getUserById - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -228,7 +228,7 @@ export const setRefreshToken = async (req, res) => {
       });
     }
   } catch (error) {
-    logger.error("controllers/user.controller.js:setRefreshToken - " + error.message);
+    logger.error("controllers/userController.js:setRefreshToken - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,

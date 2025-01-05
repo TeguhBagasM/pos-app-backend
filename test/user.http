@@ -1,5 +1,5 @@
 ### create user
-POST http://localhost:3000/users
+POST http://localhost:3000/api/users
 Content-Type: application/json
 {
   "name":"Teguh Bagas M",
@@ -8,3 +8,50 @@ Content-Type: application/json
   "confirmPassword":"teguh",
   "role":"kasir"
 }
+
+### user login
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+{
+  "userName":"teguh",
+  "password":"teguh"
+}
+
+{{
+  $global.accessToken=JSON.parse(response.body).acessToken;
+  $global.refreshToken=JSON.parse(response.body).refreshToken;
+}}
+
+### update user
+PUT http://localhost:3000/api/users/2
+Content-Type: application/json
+Authorization: Bearer {{$global.accessToken}}
+{
+  "name":"Teguh Bagmar",
+  "userName":"bagmar",
+  "password":"bagmar",
+  "confirmPassword":"bagmar",
+  "role":"kasir"
+}
+
+### delete user
+DELETE http://localhost:3000/api/users/3
+Content-Type: application/json
+Authorization: Bearer {{$global.accessToken}}
+
+### get all user
+GET http://localhost:3000/api/users
+Authorization: Bearer {{$global.accessToken}}
+
+### get user by id
+GET http://localhost:3000/api/users/2
+Authorization: Bearer {{$global.accessToken}}
+
+### refresh token
+GET http://localhost:3000/api/users/refresh
+Authorization: Bearer {{$global.refreshToken}}
+
+{{
+  $global.accessToken=JSON.parse(response.body).acessToken;
+  $global.refreshToken=JSON.parse(response.body).refreshToken;
+}}
