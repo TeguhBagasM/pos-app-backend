@@ -1,12 +1,16 @@
 import joi from "joi";
 
-export const orderReturnValidation = (payload) => {
+export const productValidation = (payload) => {
   const schema = joi.object({
-    date: joi.date().required(),
-    note: joi.string().trim().required(),
-    userId: joi.number().required(),
-    orderId: joi.number().required(),
-    detail: joi.array().required(),
+    barcode: joi.string().trim().allow(null).allow(""),
+    productName: joi.string().trim().required(),
+    image: joi.string().trim().allow(null).allow(""),
+    url: joi.string().trim().allow(null).allow(""),
+    qty: joi.number().required(),
+    price: joi.number().required(),
+    kategoryId: joi.number().required(),
+    supplierId: joi.number().required(),
+    file: joi.any().allow(null).allow(""),
   });
   return schema.validate(payload);
 };

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { autenticate } from "../controllers/errorController.js";
+// import { autenticate } from "../controllers/errorController.js";
 import {
   createProduct,
   deleteProduct,
@@ -12,13 +12,13 @@ import {
 } from "../controllers/productController.js";
 const productRoute = Router();
 
-productRoute.post("/products", autenticate, createProduct);
-productRoute.get("/products", autenticate, getAllProduct);
-productRoute.get("/products/:id", autenticate, getProductById);
-productRoute.get("/products/category/:id", autenticate, getProductByCategory);
-productRoute.put("/products/:id", autenticate, updateProduct);
-productRoute.delete("/products/:id", autenticate, deleteProduct);
-productRoute.get("/products-pdf", autenticate, generatePdf);
-productRoute.get("/products-excel", autenticate, generateExcel);
+productRoute.post("/products", createProduct);
+productRoute.get("/products", getAllProduct);
+productRoute.get("/products/:id", getProductById);
+productRoute.get("/products/category/:id", getProductByCategory);
+productRoute.put("/products/:id", updateProduct);
+productRoute.delete("/products/:id", deleteProduct);
+productRoute.get("/products-pdf", generatePdf);
+productRoute.get("/products-excel", generateExcel);
 
 export default productRoute;

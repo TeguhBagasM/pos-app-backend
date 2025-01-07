@@ -70,7 +70,7 @@ export const createProduct = async (req, res) => {
       });
     });
   } catch (error) {
-    logger.error("controllers/product.controller.js:createProduct - " + error.message);
+    logger.error("controllers/productController.js:createProduct - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -151,7 +151,7 @@ export const getAllProduct = async (req, res) => {
       hasMore: result.length >= limit ? true : false,
     });
   } catch (error) {
-    logger.error("controllers/product.controller.js:getAllProduct - " + error.message);
+    logger.error("controllers/productController.js:getAllProduct - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -177,7 +177,7 @@ export const getProductById = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/product.controller.js:getProductById - " + error.message);
+    logger.error("controllers/productController.js:getProductById - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -198,7 +198,7 @@ export const getProductByCategory = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/product.controller.js:getProductByCategory - " + error.message);
+    logger.error("controllers/productController.js:getProductByCategory - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -282,7 +282,7 @@ export const updateProduct = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/product.controller.js:updateProduct - " + error.message);
+    logger.error("controllers/productController.js:updateProduct - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -319,7 +319,7 @@ export const deleteProduct = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/product.controller.js:deleteProduct - " + error.message);
+    logger.error("controllers/productController.js:deleteProduct - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -378,7 +378,7 @@ export const generatePdf = async (req, res) => {
       });
     }
   } catch (error) {
-    logger.error("controllers/product.controller.js:generatePdf - " + error.message);
+    logger.error("controllers/productController.js:generatePdf - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -429,7 +429,7 @@ export const generateExcel = async (req, res) => {
       result: `/excel/Product.xlsx`,
     });
   } catch (error) {
-    logger.error("controllers/product.controller.js:generateExcel - " + error.message);
+    logger.error("controllers/productController.js:generateExcel - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
