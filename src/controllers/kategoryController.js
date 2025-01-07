@@ -14,7 +14,7 @@ export const getAllCategory = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/categoryController.js:getAllCategory - " + error.message);
+    logger.error("controllers/kategoryController.js:getAllCategory - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -34,7 +34,7 @@ export const getCategoryById = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/categoryController.js:getCategoryById - " + error.message);
+    logger.error("controllers/kategoryController.js:getCategoryById - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -61,7 +61,7 @@ export const createCategory = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/categoryController.js:createCategory - " + error.message);
+    logger.error("controllers/kategoryController.js:createCategory - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -91,7 +91,7 @@ export const updateCategory = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/categoryController.js:updateCategory - " + error.message);
+    logger.error("controllers/kategoryController.js:updateCategory - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,
@@ -111,7 +111,7 @@ export const deleteCategory = async (req, res) => {
       result,
     });
   } catch (error) {
-    logger.error("controllers/categoryController.js:deleteCategory - " + error.message);
+    logger.error("controllers/kategoryController.js:deleteCategory - " + error.message);
     return res.status(500).json({
       message: error.message,
       result: null,

@@ -9,16 +9,16 @@ const generateAccessToken = (user) => {
 };
 
 const generateRefreshToken = (user) => {
-  return JsonWebToken.sign(user, process.env.JWT_REFRESH_SCRET, {
+  return JsonWebToken.sign(user, process.env.JWT_REFRESH_SECRET, {
     expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || "86400s",
   });
 };
 
 function verifyRefreshToken(token) {
   try {
-    return JsonWebToken.verify(token, process.env.JWT_REFRESH_SCRET);
+    return JsonWebToken.verify(token, process.env.JWT_REFRESH_SECRET);
   } catch (err) {
-    logger.info("controllers/user.controller.js:verifyRefreshToken - " + err);
+    logger.info("controllers/userController.js:verifyRefreshToken - " + err);
     return null;
   }
 }
@@ -31,7 +31,7 @@ const verifyAccessToken = (token) => {
   try {
     return JsonWebToken.verify(token, process.env.JWT_SECRET);
   } catch (err) {
-    logger.info("controllers/user.controller.js:verifyAccessToken - " + err);
+    logger.info("controllers/userController.js:verifyAccessToken - " + err);
     return null;
   }
 };

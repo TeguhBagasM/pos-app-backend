@@ -30,10 +30,10 @@ Content-Disposition: form-data; name="supplierId"
 
 5
 --WebKitFormBoundary
-Content-Disposition: form-data; name="file"; filename="example.png"
+Content-Disposition: form-data; name="file"; filename="example.jpg"
 Content-Type: image/png
 
-< ./example.png
+< ./example.jpg
 --WebKitFormBoundary--
 
 ### get all product
@@ -78,10 +78,10 @@ Content-Disposition: form-data; name="supplierId"
 
 5
 --WebKitFormBoundary
-Content-Disposition: form-data; name="file"; filename="example.png"
+Content-Disposition: form-data; name="file"; filename="example.jpg"
 Content-Type: image/png
 
-< ./example.png
+< ./example.jpg
 --WebKitFormBoundary--
 
 ### delete product

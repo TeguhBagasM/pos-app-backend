@@ -1,0 +1,15 @@
+ [LOGGER] 2025-01-07 06:45:42.102 AM error : uncaughtException: 
+Invalid `prisma.product.create()` invocation:
+
+
+Foreign key constraint violated: `supplierId`
+PrismaClientKnownRequestError: 
+Invalid `prisma.product.create()` invocation:
+
+
+Foreign key constraint violated: `supplierId`
+    at qn.handleRequestError (C:\Users\user\Documents\stmik\project\pos-app\backend\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at qn.handleAndLogRequestError (C:\Users\user\Documents\stmik\project\pos-app\backend\node_modules\@prisma\client\runtime\library.js:121:6640)
+    at qn.request (C:\Users\user\Documents\stmik\project\pos-app\backend\node_modules\@prisma\client\runtime\library.js:121:6347)
+    at async l (C:\Users\user\Documents\stmik\project\pos-app\backend\node_modules\@prisma\client\runtime\library.js:130:9616)
+    at async file:///C:/Users/user/Documents/stmik/project/pos-app/backend/src/controllers/productController.js:54:22
